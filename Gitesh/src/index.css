@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "SmithenGoulding";
+  src: url('/fonts/SmithenGoulding.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-smithen: "SmithenGoulding", sans-serif;
+}

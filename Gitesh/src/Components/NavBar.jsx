@@ -13,7 +13,7 @@ export default function NavBar() {
     ]
 
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-    const toggleMenu = () => {  
+    const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     }
     return (
@@ -28,8 +28,15 @@ export default function NavBar() {
                         </h1></div>
                     <ul className='hidden lg:flex justify-between items-center w-108 text-sm text-[#5f5f70] font-bold '>
                         {navMenu.map((v, i) => (
-                            <li key={i}><a href={v.link} className=' hover:text-white duration-300'>{v.name}</a></li>
-                        ))}
+                            <li key={i}>
+                                <a
+                                    href={v.link}
+                                    className='relative hover:text-white duration-300 group'
+                                >
+                                    {v.name}
+                                    <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-[#f68b43] via-[#bf72a2] to-[#a164d6] group-hover:w-full transition-all duration-300 ease-in-out '></span>
+                                </a>
+                            </li>))}
                         <button className='bg-[#f68b43] hover:bg-[#e07a3a] duration-400 shadow hover:shadow-2xl  shadow-[#f68b43] text-white font-bold py-2 px-4 rounded-2xl'>
                             Hire Me
                         </button>
@@ -37,9 +44,9 @@ export default function NavBar() {
 
 
                     <div className='lg:hidden' onClick={toggleMenu}>
-                        {isMenuOpen ? 
-                            <RxCross2 size={28}  />
-                         : 
+                        {isMenuOpen ?
+                            <RxCross2 size={28} />
+                            :
                             <CgMenuLeft size={28} />
                         }
                         {isMenuOpen && (

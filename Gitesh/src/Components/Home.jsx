@@ -1,12 +1,30 @@
 import React from 'react'
 import DotGrid from './DotGrid';
-
+import StateBlinkComponent from './StateBlinkComponent';
 
 export default function Home() {
     return (
         <>
-            <div className='h-210 bg-black relative top-0'>
-                <DotGrid />
+            <div className='h-210 bg-black relative overflow-hidden'>
+                {/* Background DotGrid */}
+                <div className='absolute inset-0 z-0'>
+                    <DotGrid />
+                </div>
+
+                {/* Content */}
+                <div className='max-w-7xl w-screen mx-auto h-full relative z-10 flex items-center px-4 lg:px-10'>
+                    <div className='text-white max-w-4xl '>
+                        <div className='flex  gap-3  justify-center border items-center rounded-3xl w-55 text-center h-10 border-[#f68b43] '>
+                            <StateBlinkComponent />
+                            <p className=' text-gray-400 flex text-center text-sm'>Open to new opportunities</p>
+                        </div>
+                        <h1 className=' leading-1 mt-20'>
+                            <span className='block text-3xl text-gray-400 font-serif mb-5'>Hello, I'm</span>
+                            <span className='block text-8xl font-serif'>Gitesh</span>
+                            <span className='block text-8xl bg-linear-to-r from-[#f68b43] via-[#bf72a2] to-[#a164d6] bg-clip-text text-transparent font-serif'>Kumar</span>
+                        </h1>
+                    </div>
+                </div>
             </div>
         </>
     )

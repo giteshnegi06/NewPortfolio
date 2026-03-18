@@ -37,7 +37,7 @@ export default function NavBar() {
                                     <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-[#f68b43] via-[#bf72a2] to-[#a164d6] group-hover:w-full transition-all duration-300 ease-in-out '></span>
                                 </a>
                             </li>))}
-                        <button className='bg-[#f68b43] hover:bg-[#e07a3a] duration-400 shadow hover:shadow-2xl  shadow-[#f68b43] text-white font-bold py-2 px-4 rounded-2xl'>
+                        <button className='bg-[#ff811a] text-black font-semibold text-sm hover:shadow-[0_0_40px_hsla(27,100%,55%,0.4)] transition-all duration-300 hover:-translate-y-0.5 py-2 px-4 rounded-2xl'>
                             Hire Me
                         </button>
                     </ul>

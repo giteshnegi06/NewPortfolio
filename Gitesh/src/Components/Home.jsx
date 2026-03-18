@@ -47,12 +47,12 @@ export default function Home() {
                             BCA Graduate & MERN Stack Developer crafting high-performance, visually stunning web experiences. I turn complex problems into elegant digital solutions.
                         </p>
                         <div className='flex gap-5 mb-10'>
-                            <a href="/" className='group px-7 py-3.5 rounded-xl bg-[#ff811a] text-black font-semibold text-sm hover:shadow-[0_0_40px_hsla(27,100%,55%,0.4)] transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2'>View Projects 
+                            <a href="/" className='group px-5 md:px-7 py-3.5 rounded-xl bg-[#ff811a] text-black font-semibold text-sm hover:shadow-[0_0_40px_hsla(27,100%,55%,0.4)] transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2'>View Projects 
                             <span className='group-hover:translate-x-1 transition-transform'>
                             <HiArrowLongRight size={20} />
                             </span>
                             </a>
-                            <a href="/" className='text-sm py-4 px-7 bg-transparent rounded-2xl text-white border border-[#1b1b27] flex text-center items-center gap-2 font-semibold hover:border-[#ff811a]/40 hover:bg-[#ff811a]/5 transition-all duration-300 hover:-translate-y-0.5'><GoDownload size={20} /> Download CV</a>
+                            <a href="/" className='text-sm py-3.5 px-5 md:px-7 bg-transparent rounded-2xl text-white border border-[#1b1b27] flex text-center items-center gap-2 font-semibold hover:border-[#ff811a]/40 hover:bg-[#ff811a]/5 transition-all duration-300 hover:-translate-y-0.5'><GoDownload size={20} /> Download CV</a>
                         </div>
                         <div className='flex gap-3 items-center'>
                             <a href="/" className='bg-[#171721] border border-[#1b1b27] h-10 w-10 rounded-xl flex justify-center items-center'><FiGithub color='#75758a'/></a>

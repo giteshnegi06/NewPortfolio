@@ -10,3 +10,13 @@
 @theme {
   --font-smithen: "SmithenGoulding", sans-serif;
 }
+
+.react-rotating-text-cursor { 
+  animation: blinking-cursor 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) infinite; 
+}
+
+@keyframes blinking-cursor { 
+  0% { opacity: 0; } 
+  50% { opacity: 1; } 
+  100% { opacity: 0; } 
+}

@@ -1,8 +1,10 @@
 import React from 'react'
 import DotGrid from './DotGrid';
 import StateBlinkComponent from './StateBlinkComponent';
+import RotatingText from "./ui/rotating-text"
 
 export default function Home() {
+
     return (
         <>
             <div className='h-210 bg-black relative overflow-hidden'>
@@ -23,6 +25,15 @@ export default function Home() {
                             <span className='block text-8xl font-serif'>Gitesh</span>
                             <span className='block text-8xl bg-linear-to-r from-[#f68b43] via-[#bf72a2] to-[#a164d6] bg-clip-text text-transparent font-serif'>Kumar</span>
                         </h1>
+                        <h2 className=''>
+                            <RotatingText
+                                text={["Web Designer", "Frontend Engineer", "UI/UX Enthusiast", "MERN Stack Expert", "Freelancer"]}
+                                duration={2500}
+                                y={40}
+                                transition={{ duration: 0.6, ease: "easeInOut" }}
+                                className="bg-linear-to-r from-[#8152c8] via-[#a680ca] to-[#be69cd] bg-clip-text text-transparent text-2xl font-sans"
+                            />
+                        </h2>
                     </div>
                 </div>
             </div>

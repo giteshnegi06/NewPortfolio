@@ -9,7 +9,7 @@ import { LuLinkedin } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
 import Resume from "../PDF/MyResume.pdf"
 import { IoIosArrowDown } from "react-icons/io";
-import Lanyard from './Lanyard';
+// import Lanyard from './Lanyard';
 
 
 
@@ -65,12 +65,12 @@ export default function Home() {
                                 <p className='text-[#75758a] font-serif text-sm'>Find me online</p>
                             </div>
                         </div>
-                        <div className="App">
+                        {/* <div className="App">
                             <Lanyard
                                 position={[0, 0, 20]}
                                 gravity={[0, -40, 0]}
                             />
-                        </div>
+                        </div> */}
                     </div>
                     <div className='hidden mt-20 lg:flex justify-center items-center text-white animate-bounce'>
                         <a href="/" className='flex flex-col items-center hover:text-[#ff811a] transition-all duration-300'>

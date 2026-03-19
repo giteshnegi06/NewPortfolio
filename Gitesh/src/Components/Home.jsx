@@ -58,9 +58,9 @@ export default function Home() {
                                     <GoDownload size={20} /> Download CV</a>
                             </div>
                             <div className='flex gap-3 items-center'>
-                                <a href="/" className='bg-[#171721] border border-[#1b1b27] h-10 w-10 rounded-xl flex justify-center items-center'><FiGithub color='#75758a' /></a>
-                                <a href="/" className='bg-[#171721] border border-[#1b1b27] h-10 w-10 rounded-xl flex justify-center items-center'><LuLinkedin color='#75758a' /></a>
-                                <a href="/" className='bg-[#171721] border border-[#1b1b27] h-10 w-10 rounded-xl flex justify-center items-center'><MdOutlineMailOutline color='#75758a' /></a>
+                                <a href="/" className='bg-[#171721] border border-[#1b1b27] h-10 w-10 rounded-xl flex justify-center items-center text-[#75758a] hover:text-[#ff811a] hover:border-[#ff811a]/40 transition-all duration-300 hover:-translate-y-0.5'><FiGithub /></a>
+                                <a href="/" className='bg-[#171721] border border-[#1b1b27] h-10 w-10 rounded-xl flex justify-center items-center text-[#75758a] hover:text-[#ff811a] hover:border-[#ff811a]/40 transition-all duration-300 hover:-translate-y-0.5'><LuLinkedin /></a>
+                                <a href="/" className='bg-[#171721] border border-[#1b1b27] h-10 w-10 rounded-xl flex justify-center items-center text-[#75758a] hover:text-[#ff811a] hover:border-[#ff811a]/40 transition-all duration-300 hover:-translate-y-0.5'><MdOutlineMailOutline /></a>
                                 <div class="h-px w-10 bg-[#1b1b27] mx-1" bis_skin_checked="1"></div>
                                 <p className='text-[#75758a] font-serif text-sm'>Find me online</p>
                             </div>

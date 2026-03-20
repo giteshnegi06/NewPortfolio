@@ -21,12 +21,12 @@ export default function Home() {
             </div>
 
             {/* Main Container */}
-            <div className="max-w-7xl mx-auto h-full relative z-10 flex flex-col px-4 lg:px-10 py-16 ">
+            <div className="max-w-7xl mx-auto h-fit relative z-10 flex flex-col px-4 lg:px-10  ">
 
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+                <div className="flex flex-col lg:flex-row justify-between gap-10">
 
                     {/* LEFT SIDE */}
-                    <div className="text-white max-w-2xl z-30">
+                    <div className="text-white max-w-2xl z-30 mt-15">
 
                         {/* Status */}
                         <div className="flex gap-3 justify-center border items-center rounded-3xl w-64 h-10 border-[#f68b43]">
@@ -122,11 +122,11 @@ export default function Home() {
                     </div>
 
                     {/* RIGHT SIDE (3D) */}
-                    <div className=" absolute right-0 w-150">
+                    <div className=" absolute right-0 w-180 h-screen">
                         <Lanyard
                             position={[0, 0, 24]}
                             gravity={[0, -40, 0]}
-                            fov={13}
+                            fov={15}
                             transparent
                         />
                     </div>

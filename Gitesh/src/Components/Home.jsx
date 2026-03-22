@@ -122,7 +122,7 @@ export default function Home() {
                     </div>
 
                     {/* RIGHT SIDE (3D) */}
-                    <div className=" absolute right-0 w-150">
+                    <div className=" md:absolute right-0 w-150">
                         <Lanyard
                             position={[0, 0, 24]}
                             gravity={[0, -40, 0]}

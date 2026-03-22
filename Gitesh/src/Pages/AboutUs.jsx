@@ -36,7 +36,7 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="text-center p-6 rounded-2xl bg-[#171721] border border-[#171721] hover:border-[#ff811a]/25 duration-300 transition-colors group"
+              className="text-center p-6 rounded-2xl bg-[#171721] border border-[#1b1b27] hover:border-[#ff811a]/25 duration-300 transition-colors group"
             >
               <p className="font-syne font-bold text-3xl sm:text-4xl gradient-text mb-1">{s.value}</p>
               <p className="text-sm text-[#75758a] hover:text-white hover:border-[#ff811a]/30 transition-colors duration-300">{s.label}</p>

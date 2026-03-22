@@ -88,9 +88,9 @@ export default function NavBar() {
                         exit={{ opacity: 0, y: -20 }}
                         className="lg:hidden bg-black/90 backdrop-blur-md px-6 py-6 space-y-4"
                     >
-                        {navMenu.map((item) => (
+                        {navMenu.map((item, i) => (
                             <Link
-                                key={item.link}
+                                key={i}
                                 to={item.link}
                                 smooth={true}
                                 duration={500}

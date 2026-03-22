@@ -12,6 +12,8 @@ import Resume from "../PDF/MyResume.pdf";
 import { IoIosArrowDown } from "react-icons/io";
 import Lanyard from "../Components/Lanyard";
 import AboutUs from "./AboutUs";
+import SkillsSection from "./Skills";
+import ProjectsSection from "./Projects";
 import { Element } from "react-scroll";
 
 
@@ -24,6 +26,7 @@ export default function Home() {
     ]
     return (
         <main className="min-h-screen bg-[#08080c] overflow-hidden font-Syne">
+            <Element name="/">
             <div className=" relative ">
 
                 {/* Background */}
@@ -155,7 +158,16 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <AboutUs/>
+            </Element>
+            <Element name="Section1">
+                <AboutUs />
+            </Element>
+            <Element name="Section2">
+                <SkillsSection/>
+            </Element>
+            <Element name="Section3">
+                <ProjectsSection/>
+            </Element>
         </main>
     );
 }

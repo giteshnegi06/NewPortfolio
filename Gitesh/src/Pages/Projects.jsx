@@ -59,7 +59,7 @@ export default function ProjectsSection() {
     const filtered = filter === 'All' ? projects : projects.filter(p => p.tags.some(t => t.toLowerCase().includes(filter.toLowerCase())));
 
     return (
-        <section id="projects" className="py-24 lg:py-32 relative" ref={ref}>
+        <section id="projects" className="py-24 lg:py-32 relative font-Outfit" ref={ref}>
             <div className="section-divider" />
             <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-16">
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
@@ -68,7 +68,7 @@ export default function ProjectsSection() {
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6 }}
                     >
-                        <p className="text-primary font-syne text-sm tracking-[0.2em] uppercase mb-3 font-semibold">My Work</p>
+                        <p className="text-[#ff811a] font-syne text-sm tracking-[0.2em] uppercase mb-3 font-semibold">My Work</p>
                         <h2 className="font-syne font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
                             Featured <span className="gradient-text">Projects</span>
                         </h2>
@@ -86,8 +86,8 @@ export default function ProjectsSection() {
                                 key={f}
                                 onClick={() => setFilter(f)}
                                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${filter === f
-                                        ? 'bg-primary text-primary-foreground shadow-[0_0_20px_hsla(27,100%,55%,0.3)]'
-                                        : 'bg-secondary text-muted-foreground hover:text-foreground border border-border'
+                                        ? 'bg-[#ff811a] text-black shadow-[0_0_20px_hsla(27,100%,55%,0.3)]'
+                                        : 'bg-[#171721] text-[#75758a] hover:text-white border border-[#1b1b27]'
                                     }`}
                             >
                                 {f}
@@ -106,7 +106,7 @@ export default function ProjectsSection() {
                             transition={{ duration: 0.5, delay: i * 0.08 }}
                         >
                             <TiltCard
-                                className={`overflow-hidden group h-full grad-border ${project.featured ? 'ring-1 ring-primary/20' : ''}`}
+                                className={`overflow-hidden group h-full grad-border ${project.featured ? 'ring-1 ring-[#ff811a]/20' : ''}`}
                                 glowColor={`${project.accent}18`}
                             >
                                 {/* Image */}
@@ -116,9 +116,9 @@ export default function ProjectsSection() {
                                         alt={project.title}
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-card/20 to-transparent" />
+                                    <div className="absolute inset-0 bg-linear-to-t from-[#0e0e11]/90 via-[#0e0e11]/20 to-transparent" />
                                     {project.featured && (
-                                        <div className="absolute top-3 left-3 px-2.5 py-1 rounded-lg text-xs font-semibold bg-primary text-primary-foreground">
+                                        <div className="absolute top-3 left-3 px-2.5 py-1 rounded-lg text-xs font-semibold bg-[#ff811a] text-black">
                                             Featured
                                         </div>
                                     )}
@@ -127,7 +127,7 @@ export default function ProjectsSection() {
                                         {[Github, ExternalLink].map((Icon, j) => (
                                             <div
                                                 key={j}
-                                                className="w-8 h-8 rounded-lg glass border border-white/10 flex items-center justify-center text-foreground hover:text-primary cursor-pointer transition-colors"
+                                                className="w-8 h-8 rounded-2xl glass border border-white/10 flex items-center justify-center text-foreground hover:text-[#ff811a] cursor-pointer transition-colors"
                                             >
                                                 <Icon size={13} />
                                             </div>
@@ -141,15 +141,15 @@ export default function ProjectsSection() {
                                         <h3 className="font-syne font-bold text-base text-foreground">{project.title}</h3>
                                         <ArrowUpRight
                                             size={16}
-                                            className="text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-0.5"
+                                            className="text-[#75758a] group-hover:text-[#ff811a] transition-colors shrink-0 mt-0.5"
                                         />
                                     </div>
-                                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{project.desc}</p>
+                                    <p className="text-sm text-[#75758a] mb-4 leading-relaxed">{project.desc}</p>
                                     <div className="flex flex-wrap gap-2">
                                         {project.tags.map((tag) => (
                                             <span
                                                 key={tag}
-                                                className="px-2.5 py-1 text-xs rounded-lg bg-secondary text-muted-foreground border border-border"
+                                                className="px-2.5 py-1 text-xs rounded-xl bg-[#171721] text-[#75758a] border border-[#1b1b27]"
                                             >
                                                 {tag}
                                             </span>

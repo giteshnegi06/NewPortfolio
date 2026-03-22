@@ -14,6 +14,7 @@ import Lanyard from "../Components/Lanyard";
 import AboutUs from "./AboutUs";
 import SkillsSection from "./Skills";
 import ProjectsSection from "./Projects";
+import ContactSection from "./Contact";
 import { Element } from "react-scroll";
 
 
@@ -167,6 +168,9 @@ export default function Home() {
             </Element>
             <Element name="Section3">
                 <ProjectsSection/>
+            </Element>
+            <Element name="Section4">
+                <ContactSection/>
             </Element>
         </main>
     );

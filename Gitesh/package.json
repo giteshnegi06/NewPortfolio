@@ -25,6 +25,7 @@
     "react-rotating-text": "^1.4.1",
     "react-router-dom": "^7.13.1",
     "react-scroll": "^1.9.3",
+    "sonner": "^2.0.7",
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.1",
     "three": "^0.183.2"

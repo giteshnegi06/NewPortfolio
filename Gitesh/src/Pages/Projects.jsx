@@ -6,7 +6,7 @@ import TiltCard from '../Components/TiltCard';
 const projects = [
     {
         title: 'Wedding Portfolio',
-        desc: 'Full-stack shopping platform with Stripe payments, admin dashboard, and real-time inventory.',
+        desc: 'Full-stack Wedding Portfolio, with Animations and Reasponsive Design.',
         tags: ['React', 'Tailwind Css', 'Vercal', 'HTML'],
         image: 'https://res.cloudinary.com/dh52la71p/image/upload/v1774193767/Screenshot_2026-03-08_124644_yo4ppn.png',
         accent: '#f97316',

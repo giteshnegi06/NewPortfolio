@@ -7,8 +7,8 @@ import { toast } from 'sonner';
 import TiltCard from '../Components/TiltCard';
 
 const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'negigitesh@email.com', color: 'text-[#f68b43]', bg: 'bg-[#f68b43]/10' },
-  { icon: Phone, label: 'Phone', value: '+91 98765 43210', color: 'text-[#935eed]', bg: 'bg-[#935eed]/10' },
+  { icon: Mail, label: 'Email', value: 'negigitesh@email.com', color: 'text-[#f68b43]', bg: 'bg-[#f68b43]/10', link:"mailto:negigitesh@gmail.com" },
+  { icon: Phone, label: 'Phone', value: '+91 82195 69378', color: 'text-[#935eed]', bg: 'bg-[#935eed]/10', link:"tel:+91 82195 69378" },
   { icon: MapPin, label: 'Location', value: 'Karnal, 🇮🇳', color: 'text-orange-400', bg: 'bg-orange-400/10' },
 ];
 
@@ -59,7 +59,8 @@ export default function ContactSection() {
             className="lg:col-span-2 space-y-4"
           >
             {contactInfo.map((item, i) => (
-              <TiltCard key={i} className="p-5 grad-border bg-[#0f0f15]" glowColor="hsla(27,100%,55%,0.1)">
+              <a href={item.link} className='p-5'>
+                <TiltCard key={i} className="p-5 grad-border bg-[#0f0f15]" glowColor="hsla(27,100%,55%,0.1)">
                 <div className="flex items-center gap-4">
                   <div className={`w-11 h-11 rounded-xl ${item.bg} flex items-center justify-center shrink-0`}>
                     <item.icon className={item.color} size={20} />
@@ -70,6 +71,7 @@ export default function ContactSection() {
                   </div>
                 </div>
               </TiltCard>
+              </a>
             ))}
 
             <TiltCard className="p-5 grad-border mt-4 bg-[#0f0f15]" glowColor="hsla(262,80%,65%,0.1)">

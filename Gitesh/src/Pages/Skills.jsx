@@ -54,7 +54,7 @@ export default function SkillsSection() {
                     className="flex flex-wrap gap-3 mb-10"
                 >
                     {categories.map((c) => (
-                        <span key={c.label} className="flex items-center gap-1.5 text-xs text-[#75758a] px-3 py-1.5 rounded-full bg-[#171721] border border-[#1b1b27]">
+                        <span key={c.label} className="flex items-center gap-1.5 text-xs text-[#75758a] px-3 py-1.5 rounded-full bg-[#17171c] border border-[#1b1b21]">
                             <span className="w-2 h-2 rounded-full" style={{ background: c.color }} />
                             {c.label}
                         </span>
@@ -73,7 +73,7 @@ export default function SkillsSection() {
                                 transition={{ duration: 0.5, delay: i * 0.05 }}
                             >
                                 <TiltCard
-                                    className="p-5 bg-[#171721] h-full"
+                                    className="p-5 grad-border h-full bg-[#0f0f15]"
                                     glowColor={`${catColor}22`}
                                 >
                                     <div className="flex items-center justify-between mb-4">
@@ -84,10 +84,10 @@ export default function SkillsSection() {
                                                 <p className="text-xs" style={{ color: catColor }}>{skill.cat}</p>
                                             </div>
                                         </div>
-                                        <span className="text-xs font-bold text-muted-foreground">{skill.level}%</span>
+                                        <span className="text-xs font-bold text-[#75758a]">{skill.level}%</span>
                                     </div>
                                     {/* Progress bar */}
-                                    <div className="h-1.5 rounded-full bg-secondary overflow-hidden">
+                                    <div className="h-1.5 rounded-full bg-[#17171c] overflow-hidden">
                                         <motion.div
                                             initial={{ width: 0 }}
                                             animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}

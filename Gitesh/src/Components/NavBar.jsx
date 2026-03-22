@@ -1,32 +1,58 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { CgMenuLeft } from "react-icons/cg";
 import { RxCross2 } from "react-icons/rx";
+import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
     const navMenu = [
-        { name: 'Home', link: '/' },
-        { name: 'About', link: '/about' },
-        { name: 'Skills', link: '/skills' },
-        { name: 'Projects', link: '/projects' },
-        { name: 'Contact', link: '/contact' },
-    ]
+        { name: "Home", link: "/" },
+        { name: "About", link: "/about" },
+        { name: "Skills", link: "/skills" },
+        { name: "Projects", link: "/projects" },
+        { name: "Contact", link: "/contact" },
+    ];
 
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    }
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+    // Scroll effect
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 60);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    const linkStyle = ({ isActive }) =>
+        isActive
+            ? "text-white"
+            : "text-[#5f5f70] hover:text-white";
+
     return (
-        <>
-            <header className='flex justify-center bg-black text-white'>
-                <nav className='flex justify-between items-center p-4 w-screen max-w-7xl h-18 lg:px-10 lg:py-4 mx-auto'>
-                    <div className='flex items-center gap-4'>
-                        <img src="https://res.cloudinary.com/dh52la71p/image/upload/v1773765844/Gemini_Generated_Image_ze044kze044kze04-Photoroom_fq7z3f.png" alt="Gitesh"
-                            className='w-10 h-10 rounded-full bg-linear-to-r from-[#f68b43] via-[#bf72a2] to-[#a164d6]' />
-                        <h1 className='text-2xl font-serif tracking-wide'>
-                            Gitesh <span className="bg-linear-to-r from-[#f68b43] via-[#bf72a2] to-[#a164d6] bg-clip-text text-transparent text-2xl tracking-wide">Kumar</span>
-                        </h1></div>
-                    <ul className='hidden lg:flex justify-between items-center w-108 text-sm text-[#5f5f70] font-bold '>
+        <motion.header
+            initial={{ y: -80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.7 }}
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+                ? "backdrop-blur-md bg-black/60 border-b border-white/10"
+                : "bg-transparent"
+                }`}
+        >
+            <nav className="flex justify-between items-center p-4 max-w-7xl mx-auto">
+
+                {/* Logo */}
+                <div className='flex items-center gap-4'>
+                    <img src="https://res.cloudinary.com/dh52la71p/image/upload/v1773765844/Gemini_Generated_Image_ze044kze044kze04-Photoroom_fq7z3f.png" alt="Gitesh"
+                        className='w-10 h-10 rounded-full bg-linear-to-r from-[#f68b43] via-[#bf72a2] to-[#a164d6]' />
+                    <h1 className='text-2xl font-serif tracking-wide text-white'>
+                        Gitesh <span className="bg-linear-to-r from-[#f68b43] via-[#bf72a2] to-[#a164d6] bg-clip-text text-transparent text-2xl tracking-wide">Kumar</span>
+                    </h1>
+                </div>
+
+                {/* Desktop Menu */}
+                <ul className='hidden lg:flex justify-between items-center w-108 text-sm text-[#5f5f70] font-bold '>
                         {navMenu.map((v, i) => (
                             <li key={i}>
                                 <a
@@ -42,24 +68,38 @@ export default function NavBar() {
                         </button>
                     </ul>
 
+                {/* Mobile Button */}
+                <button className="lg:hidden text-white text-2xl" onClick={toggleMenu}>
+                    {isMenuOpen ? <RxCross2 /> : <CgMenuLeft />}
+                </button>
+            </nav>
 
-                    <div className='lg:hidden' onClick={toggleMenu}>
-                        {isMenuOpen ?
-                            <RxCross2 size={28} />
-                            :
-                            <CgMenuLeft size={28} />
-                        }
-                        {isMenuOpen && (
-                            <ul className=' absolute top-16 z-50 text-[#5f5f70] right-5 text-end space-y-1'>
-                                {navMenu.map((v, i) => (
-                                    <li key={i}><a href={v.link} className='hover:text-[#f68b43] duration-300' onClick={toggleMenu}>{v.name}</a></li>
-                                ))}
-                            </ul>
-                        )}
+            {/* Mobile Menu with Animation */}
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        className="lg:hidden bg-black/90 backdrop-blur-md px-6 py-6 space-y-4"
+                    >
+                        {navMenu.map((item) => (
+                            <NavLink
+                                key={item.link}
+                                to={item.link}
+                                className="block text-gray-300 hover:text-orange-400"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                {item.name}
+                            </NavLink>
+                        ))}
 
-                    </div>
-                </nav>
-            </header>
-        </>
-    )
+                        <button className="w-full bg-orange-500 text-black py-2 rounded-xl">
+                            Hire Me
+                        </button>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.header>
+    );
 }

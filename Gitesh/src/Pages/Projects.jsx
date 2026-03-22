@@ -5,26 +5,26 @@ import TiltCard from '../Components/TiltCard';
 
 const projects = [
     {
-        title: 'E-Commerce Platform',
+        title: 'Wedding Portfolio',
         desc: 'Full-stack shopping platform with Stripe payments, admin dashboard, and real-time inventory.',
-        tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-        image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
+        tags: ['React', 'Tailwind Css', 'Vercal', 'HTML'],
+        image: 'https://res.cloudinary.com/dh52la71p/image/upload/v1774193767/Screenshot_2026-03-08_124644_yo4ppn.png',
         accent: '#f97316',
         featured: true,
     },
     {
-        title: 'SaaS Analytics Dashboard',
+        title: 'SNKR Base Ecommerce Platform',
         desc: 'Real-time analytics platform with interactive charts, user management, and role-based access.',
         tags: ['Next.js', 'TypeScript', 'Tailwind'],
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+        image: 'https://res.cloudinary.com/dh52la71p/image/upload/v1774193747/Screenshot_2025-11-01_005307_r0faf8.png',
         accent: '#a855f7',
         featured: true,
     },
     {
-        title: 'Social Media App',
+        title: 'Udemy Landing Page Clone',
         desc: 'Real-time social platform with live messaging, stories, and content feed via WebSockets.',
         tags: ['React', 'Socket.io', 'Express'],
-        image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop',
+        image: 'https://res.cloudinary.com/dh52la71p/image/upload/v1774193755/Screenshot_2025-11-01_005404_zilqt3.png',
         accent: '#00d4ff',
     },
     {

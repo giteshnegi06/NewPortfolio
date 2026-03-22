@@ -7,8 +7,8 @@ import { toast } from 'sonner';
 import TiltCard from '../Components/TiltCard';
 
 const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'negigitesh@email.com', color: 'text-[#f68b43]', bg: 'bg-[#f68b43]/10', link:"mailto:negigitesh@gmail.com" },
-  { icon: Phone, label: 'Phone', value: '+91 82195 69378', color: 'text-[#935eed]', bg: 'bg-[#935eed]/10', link:"tel:+91 82195 69378" },
+  { icon: Mail, label: 'Email', value: 'negigitesh@email.com', color: 'text-[#f68b43]', bg: 'bg-[#f68b43]/10', link: "mailto:negigitesh@gmail.com" },
+  { icon: Phone, label: 'Phone', value: '+91 82195 69378', color: 'text-[#935eed]', bg: 'bg-[#935eed]/10', link: "tel:+91 82195 69378" },
   { icon: MapPin, label: 'Location', value: 'Karnal, 🇮🇳', color: 'text-orange-400', bg: 'bg-orange-400/10' },
 ];
 
@@ -17,14 +17,40 @@ export default function ContactSection() {
   const isInView = useInView(ref, { once: true, margin: '-80px' });
   const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e) => {
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyMQOQctkTolqkppbA_Aj5g7RbUAfzuVYMSGyRgzMEqIs7A7m9sDzyZ9Tngo_pbJI5F/exec";
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
-    setTimeout(() => {
+
+    const form = e.target;
+
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      subject: form.subject.value,
+      message: form.message.value,
+    };
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors", // 🔥 IMPORTANT
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8", // 🔥 IMPORTANT
+        },
+        body: JSON.stringify(data),
+      });
+
+      toast.success("Message sent successfully 🚀");
+      form.reset();
+
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to send ❌");
+    } finally {
       setSending(false);
-      toast.success('Message sent! I\'ll get back to you soon.');
-      e.target.reset();
-    }, 1500);
+    }
   };
 
   return (
@@ -61,16 +87,16 @@ export default function ContactSection() {
             {contactInfo.map((item, i) => (
               <a href={item.link} className='p-5'>
                 <TiltCard key={i} className="p-5 grad-border bg-[#0f0f15]" glowColor="hsla(27,100%,55%,0.1)">
-                <div className="flex items-center gap-4">
-                  <div className={`w-11 h-11 rounded-xl ${item.bg} flex items-center justify-center shrink-0`}>
-                    <item.icon className={item.color} size={20} />
+                  <div className="flex items-center gap-4">
+                    <div className={`w-11 h-11 rounded-xl ${item.bg} flex items-center justify-center shrink-0`}>
+                      <item.icon className={item.color} size={20} />
+                    </div>
+                    <div>
+                      <p className="text-xs text-[#75758a] font-medium mb-0.5">{item.label}</p>
+                      <p className="text-sm font-semibold text-foreground">{item.value}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-xs text-[#75758a] font-medium mb-0.5">{item.label}</p>
-                    <p className="text-sm font-semibold text-foreground">{item.value}</p>
-                  </div>
-                </div>
-              </TiltCard>
+                </TiltCard>
               </a>
             ))}
 

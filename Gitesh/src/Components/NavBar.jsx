@@ -59,7 +59,7 @@ export default function NavBar() {
                                 to={v.link}
                                 smooth={true}
                                 duration={500}
-                                offset={-70}
+                                offset={5}
                                 spy={true}
                                 activeClass="text-white"
                                 className='relative hover:text-white duration-300 group'

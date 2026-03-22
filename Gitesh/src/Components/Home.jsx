@@ -26,7 +26,7 @@ export default function Home() {
                 <div className="flex flex-col lg:flex-row justify-between gap-10">
 
                     {/* LEFT SIDE */}
-                    <div className="text-white max-w-2xl z-30 mt-15">
+                    <div className="text-white md:w-sm lg:w-2xl max-w-2xl z-30 mt-15">
 
                         {/* Status */}
                         <div className="flex gap-3 justify-center border items-center rounded-3xl w-64 h-10 border-[#f68b43]">
@@ -122,11 +122,11 @@ export default function Home() {
                     </div>
 
                     {/* RIGHT SIDE (3D) */}
-                    <div className=" md:absolute right-0 w-150">
+                    <div className="md:absolute md:right-0 lg:right-0 2xl:-right-20 h-200 md:h-full md:w-95 lg:w-120 xl:w-180 2xl:w-200">
                         <Lanyard
                             position={[0, 0, 24]}
                             gravity={[0, -40, 0]}
-                            fov={15}
+                            fov={14}
                             transparent
                         />
                     </div>

@@ -4,7 +4,7 @@ import { GraduationCap, Briefcase, Code2, Palette, CheckCircle } from 'lucide-re
 import TiltCard from '../Components/TiltCard';
 
 const stats = [
-  { value: '3+', label: 'Years Experience' },
+  { value: '2', label: 'Years Experience' },
   { value: '20+', label: 'Projects Completed' },
   { value: '15+', label: 'Happy Clients' },
   { value: '100%', label: 'Job Success' },

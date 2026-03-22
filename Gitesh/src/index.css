@@ -1,15 +1,10 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "SmithenGoulding";
-  src: url('/fonts/SmithenGoulding.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+@theme {
+  --font-Syne: "Syne", sans-serif;
+  --font-Outfit: "Outfit", sans-serif;
 }
 
-@theme {
-  --font-smithen: "SmithenGoulding", sans-serif;
-}
 
 .react-rotating-text-cursor { 
   animation: blinking-cursor 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) infinite; 
@@ -20,3 +15,150 @@
   50% { opacity: 1; } 
   100% { opacity: 0; } 
 }
+
+
+
+
+:root {
+  --background: 240 20% 4%;
+  --foreground: 240 10% 95%;
+  --card: 240 18% 7%;
+  --card-foreground: 240 10% 95%;
+  --popover: 240 18% 7%;
+  --popover-foreground: 240 10% 95%;
+  --primary: 27 100% 55%;
+  --primary-foreground: 240 20% 4%;
+  --secondary: 240 18% 11%;
+  --secondary-foreground: 240 10% 95%;
+  --muted: 240 18% 11%;
+  --muted-foreground: 240 8% 50%;
+  --accent: 262 80% 65%;
+  --accent-foreground: 240 10% 95%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 240 18% 13%;
+  --input: 240 18% 13%;
+  --ring: 27 100% 55%;
+  --radius: 1rem;
+}
+
+* { scroll-behavior: smooth; box-sizing: border-box; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  overflow-x: hidden;
+}
+
+.font-syne { font-family: 'Syne', sans-serif; }
+
+/* Gradient text - orange to violet */
+.gradient-text {
+  background: linear-gradient(110deg, hsl(27 100% 60%), hsl(262 80% 65%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-rev {
+  background: linear-gradient(110deg, hsl(262 80% 65%), hsl(27 100% 60%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow border */
+.glow-border {
+  border: 1px solid hsla(27, 100%, 55%, 0.12);
+}
+
+/* Grid background */
+.grid-bg {
+  background-image:
+    linear-gradient(hsla(27, 100%, 55%, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, hsla(27, 100%, 55%, 0.04) 1px, transparent 1px);
+  background-size: 70px 70px;
+}
+
+/* Dot pattern bg */
+.dot-bg {
+  background-image: radial-gradient(hsla(262, 80%, 65%, 0.08) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Glass card */
+.glass {
+  background: hsla(240, 18%, 7%, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* 3D Card */
+.perspective-container { perspective: 1200px; }
+.tilt-card { transform-style: preserve-3d; }
+.tilt-card .card-shine {
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  opacity: 0; transition: opacity 0.4s;
+  pointer-events: none;
+}
+.tilt-card:hover .card-shine { opacity: 1; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: hsl(var(--background)); }
+::-webkit-scrollbar-thumb { background: hsla(27, 100%, 55%, 0.4); border-radius: 3px; }
+
+/* Animated underline */
+.hover-line {
+  position: relative;
+}
+.hover-line::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, hsl(27 100% 55%), hsl(262 80% 65%));
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+.hover-line:hover::after { width: 100%; }
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsla(27,100%,55%,0.15), hsla(262,80%,65%,0.15), transparent);
+}
+
+/* Floating animation */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.float-anim { animation: floatY 4s ease-in-out infinite; }
+.float-anim-slow { animation: floatY 5.5s ease-in-out infinite; }
+
+/* Spinning ring */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin-slow { animation: spin-slow 12s linear infinite; }
+
+/* Gradient border card */
+.grad-border {
+  position: relative;
+  border-radius: 1rem;
+}
+.grad-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: calc(1rem + 1px);
+  background: linear-gradient(135deg, hsla(27,100%,55%,0.4), hsla(262,80%,65%,0.4));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.grad-border:hover::before { opacity: 1; }

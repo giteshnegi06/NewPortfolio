@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CgMenuLeft } from "react-icons/cg";
 import { RxCross2 } from "react-icons/rx";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
 
 export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,10 +10,10 @@ export default function NavBar() {
 
     const navMenu = [
         { name: "Home", link: "/" },
-        { name: "About", link: "/about" },
-        { name: "Skills", link: "/skills" },
-        { name: "Projects", link: "/projects" },
-        { name: "Contact", link: "/contact" },
+        { name: "About", link: "Section1" },
+        { name: "Skills", link: "Section2" },
+        { name: "Projects", link: "Section3" },
+        { name: "Contact", link: "Section4" },
     ];
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -40,33 +40,38 @@ export default function NavBar() {
                 : "bg-transparent"
                 }`}
         >
-            <nav className="flex justify-between items-center p-4 max-w-7xl mx-auto">
+            <nav className="flex justify-between items-center p-4 max-w-7xl mx-auto font-Syne">
 
                 {/* Logo */}
-                <div className='flex items-center gap-4'>
+                <div className='flex items-center gap-2'>
                     <img src="https://res.cloudinary.com/dh52la71p/image/upload/v1773765844/Gemini_Generated_Image_ze044kze044kze04-Photoroom_fq7z3f.png" alt="Gitesh"
-                        className='w-10 h-10 rounded-full bg-linear-to-r from-[#f68b43] via-[#bf72a2] to-[#a164d6]' />
-                    <h1 className='text-2xl font-serif tracking-wide text-white'>
-                        Gitesh <span className="bg-linear-to-r from-[#f68b43] via-[#bf72a2] to-[#a164d6] bg-clip-text text-transparent text-2xl tracking-wide">Kumar</span>
+                        className='w-8 h-8 rounded-full bg-linear-to-r from-[#f68b43] via-[#bf72a2] to-[#a164d6]' />
+                    <h1 className='text-xl tracking-wide text-white font-bold'>
+                        Gitesh <span className="bg-linear-to-r from-[#f68b43] via-[#bf72a2] to-[#a164d6] bg-clip-text text-transparent tracking-wide">Kumar</span>
                     </h1>
                 </div>
 
                 {/* Desktop Menu */}
-                <ul className='hidden lg:flex justify-between items-center w-108 text-sm text-[#5f5f70] font-bold '>
-                        {navMenu.map((v, i) => (
-                            <li key={i}>
-                                <a
-                                    href={v.link}
-                                    className='relative hover:text-white duration-300 group'
-                                >
-                                    {v.name}
-                                    <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-[#f68b43] via-[#bf72a2] to-[#a164d6] group-hover:w-full transition-all duration-300 ease-in-out '></span>
-                                </a>
-                            </li>))}
-                        <button className='bg-[#ff811a] text-black font-semibold text-sm hover:shadow-[0_0_40px_hsla(27,100%,55%,0.4)] transition-all duration-300 hover:-translate-y-0.5 py-2 px-4 rounded-2xl'>
-                            Hire Me
-                        </button>
-                    </ul>
+                <ul className='hidden lg:flex justify-between items-center w-108 text-sm text-[#5f5f70] font-Outfit '>
+                    {navMenu.map((v, i) => (
+                        <li key={i}>
+                            <Link
+                                to={v.link}
+                                smooth={true}
+                                duration={500}
+                                offset={-70}
+                                spy={true}
+                                activeClass="text-white"
+                                className='relative hover:text-white duration-300 group'
+                            >
+                                {v.name}
+                                <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-[#f68b43] via-[#bf72a2] to-[#a164d6] group-hover:w-full transition-all duration-300 ease-in-out '></span>
+                            </Link>
+                        </li>))}
+                    <button className='bg-[#ff811a] text-black  text-sm hover:shadow-[0_0_40px_hsla(27,100%,55%,0.4)] transition-all duration-300 hover:-translate-y-0.5 py-2 px-4 rounded-2xl'>
+                        Hire Me
+                    </button>
+                </ul>
 
                 {/* Mobile Button */}
                 <button className="lg:hidden text-white text-2xl" onClick={toggleMenu}>
@@ -84,14 +89,17 @@ export default function NavBar() {
                         className="lg:hidden bg-black/90 backdrop-blur-md px-6 py-6 space-y-4"
                     >
                         {navMenu.map((item) => (
-                            <NavLink
+                            <Link
                                 key={item.link}
                                 to={item.link}
+                                smooth={true}
+                                duration={500}
+                                offset={-70}
                                 className="block text-gray-300 hover:text-orange-400"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {item.name}
-                            </NavLink>
+                            </Link>
                         ))}
 
                         <button className="w-full bg-orange-500 text-black py-2 rounded-xl">

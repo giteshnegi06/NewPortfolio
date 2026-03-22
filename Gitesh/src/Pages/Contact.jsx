@@ -97,20 +97,20 @@ export default function ContactSection() {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="text-xs text-[#75758a] font-medium mb-2 block uppercase tracking-wider">Name</label>
-                    <Input required placeholder="Name" className="bg-[#17171c] border-[#1b1b21] focus:border-[#f68b43]/50 h-11 rounded-xl" />
+                    <Input required name="name" placeholder="Name" className="bg-[#17171c] border-[#1b1b21] focus:border-[#f68b43]/50 h-11 rounded-xl" />
                   </div>
                   <div>
                     <label className="text-xs text-[#75758a] font-medium mb-2 block uppercase tracking-wider">Email</label>
-                    <Input required type="email" placeholder="hello@email.com" className="bg-[#17171c] border-[#1b1b21] focus:border-[#f68b43]/50 h-11 rounded-xl" />
+                    <Input required name="email" type="email" placeholder="hello@email.com" className="bg-[#17171c] border-[#1b1b21] focus:border-[#f68b43]/50 h-11 rounded-xl" />
                   </div>
                 </div>
                 <div>
                   <label className="text-xs text-[#75758a] font-medium mb-2 block uppercase tracking-wider">Subject</label>
-                  <Input required placeholder="Project Inquiry" className="bg-[#17171c] border-[#1b1b21] focus:border-[#f68b43]/50 h-11 rounded-xl" />
+                  <Input required name="subject" placeholder="Project Inquiry" className="bg-[#17171c] border-[#1b1b21] focus:border-[#f68b43]/50 h-11 rounded-xl" />
                 </div>
                 <div>
                   <label className="text-xs text-[#75758a] font-medium mb-2 block uppercase tracking-wider">Message</label>
-                  <Textarea required placeholder="Tell me about your project..." rows={5} className="bg-[#17171c] border-[#1b1b21] focus:border-[#f68b43]/50 resize-none rounded-xl" />
+                  <Textarea required name="message" placeholder="Tell me about your project..." rows={5} className="bg-[#17171c] border-[#1b1b21] focus:border-[#f68b43]/50 resize-none rounded-xl" />
                 </div>
                 <button
                   type="submit"

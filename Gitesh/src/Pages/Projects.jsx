@@ -79,7 +79,7 @@ export default function ProjectsSection() {
     const isInView = useInView(ref, { once: true, margin: '-80px' });
     const [filter, setFilter] = useState('All');
 
-    const filters = ['All', 'React', 'MERN', 'Next.js'];
+    const filters = ['All', 'React', 'Tailwind CSS', 'MERN'];
     const filtered = filter === 'All' ? projects : projects.filter(p => p.tags.some(t => t.toLowerCase().includes(filter.toLowerCase())));
 
     return (

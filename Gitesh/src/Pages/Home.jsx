@@ -8,7 +8,7 @@ import { HiArrowLongRight } from "react-icons/hi2";
 import { FiGithub } from "react-icons/fi";
 import { LuLinkedin } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
-import Resume from "../PDF/MyResume.pdf";
+import Resume from "../PDF/GiteshResume.pdf";
 import { IoIosArrowDown } from "react-icons/io";
 import Lanyard from "../Components/Lanyard";
 import AboutUs from "./AboutUs";
@@ -120,7 +120,7 @@ export default function Home() {
 
                                         <a
                                             href={Resume}
-                                            download="Gitesh_Kumar_Resume.pdf"
+                                            download="Gitesh_Resume.pdf"
                                             className="text-sm py-3.5 px-5 md:px-7 bg-transparent rounded-xl text-white border border-[#1b1b27] flex items-center gap-2 hover:border-[#ff811a]/40 hover:bg-[#ff811a]/5 transition-all duration-300 hover:-translate-y-0.5 font-semibold"
                                         >
                                             <GoDownload size={20} />

@@ -11,28 +11,44 @@ const projects = [
         image: 'https://res.cloudinary.com/dh52la71p/image/upload/v1774193767/Screenshot_2026-03-08_124644_yo4ppn.png',
         accent: '#f97316',
         featured: true,
+        links: [
+            { icon: Github, url: "https://github.com/giteshnegi06", label: "GitHub" },
+            { icon: ExternalLink, url: "https://mahak-seven.vercel.app/", label: "Live Demo" }
+        ]
     },
     {
-        title: 'SNKR Base Ecommerce Platform',
-        desc: 'Real-time analytics platform with interactive charts, user management, and role-based access.',
-        tags: ['Next.js', 'TypeScript', 'Tailwind'],
+        title: 'Sahil Hair Salon Portfolio',
+        desc: 'Premium portfolio showcasing modern web solutions and smooth, user-focused design.',
+        tags: ['React', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
+        image: 'https://res.cloudinary.com/dh52la71p/image/upload/v1775977447/Screenshot_2026-04-12_114943_ctneth.png',
+        accent: '#22c55e',
+        featured: true,
+         links: [
+            { icon: Github, url: "https://github.com/giteshnegi06", label: "GitHub" },
+            { icon: ExternalLink, url: "https://sahil-hair.vercel.app/", label: "Live Demo" }
+        ]
+    },
+    {
+        title: 'SNKR Base E-commerce Platform',
+        desc: 'Modern sneaker store with clean UI and smooth user experience.',
+        tags: ['JavaScript', 'HTML', 'Tailwind CSS', 'Vercel'],
         image: 'https://res.cloudinary.com/dh52la71p/image/upload/v1774193747/Screenshot_2025-11-01_005307_r0faf8.png',
         accent: '#a855f7',
-        featured: true,
+         links: [
+            { icon: Github, url: "https://github.com/giteshnegi06", label: "GitHub" },
+            { icon: ExternalLink, url: "https://snkr-base.vercel.app/", label: "Live Demo" }
+        ]
     },
     {
         title: 'Udemy Landing Page Clone',
-        desc: 'Real-time social platform with live messaging, stories, and content feed via WebSockets.',
-        tags: ['React', 'Socket.io', 'Express'],
+        desc: 'Udemy clone with clean UI and smooth learning experience.',
+        tags: ['React', 'Tailwind CSS', 'Vercel'],
         image: 'https://res.cloudinary.com/dh52la71p/image/upload/v1774193755/Screenshot_2025-11-01_005404_zilqt3.png',
         accent: '#00d4ff',
-    },
-    {
-        title: 'Task Management Tool',
-        desc: 'Kanban-style project manager with drag-and-drop, team collaboration, and deadline tracking.',
-        tags: ['React', 'Node.js', 'MongoDB'],
-        image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop',
-        accent: '#22c55e',
+         links: [
+            { icon: Github, url: "https://github.com/giteshnegi06", label: "GitHub" },
+            { icon: ExternalLink, url: "https://udemy-liard.vercel.app/", label: "Live Demo" }
+        ]
     },
     {
         title: 'Restaurant Booking System',
@@ -40,6 +56,10 @@ const projects = [
         tags: ['MERN', 'Stripe', 'JWT'],
         image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop',
         accent: '#eab308',
+         links: [
+            { icon: Github, url: "https://github.com/giteshnegi06", label: "GitHub" },
+            { icon: ExternalLink, url: "https://mahak-seven.vercel.app/", label: "Live Demo" }
+        ]
     },
     {
         title: 'Portfolio Website',
@@ -47,6 +67,10 @@ const projects = [
         tags: ['React', 'Framer Motion', 'Tailwind'],
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
         accent: '#ec4899',
+         links: [
+            { icon: Github, url: "https://github.com/giteshnegi06", label: "GitHub" },
+            { icon: ExternalLink, url: "https://mahak-seven.vercel.app/", label: "Live Demo" }
+        ]
     },
 ];
 
@@ -86,8 +110,8 @@ export default function ProjectsSection() {
                                 key={f}
                                 onClick={() => setFilter(f)}
                                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${filter === f
-                                        ? 'bg-[#ff811a] text-black shadow-[0_0_20px_hsla(27,100%,55%,0.3)]'
-                                        : 'bg-[#171721] text-[#75758a] hover:text-white border border-[#1b1b27]'
+                                    ? 'bg-[#ff811a] text-black shadow-[0_0_20px_hsla(27,100%,55%,0.3)]'
+                                    : 'bg-[#171721] text-[#75758a] hover:text-white border border-[#1b1b27]'
                                     }`}
                             >
                                 {f}
@@ -124,14 +148,20 @@ export default function ProjectsSection() {
                                     )}
                                     {/* Action buttons */}
                                     <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                                        {[Github, ExternalLink].map((Icon, j) => (
-                                            <div
-                                                key={j}
-                                                className="w-8 h-8 rounded-2xl glass border border-white/10 flex items-center justify-center text-foreground hover:text-[#ff811a] cursor-pointer transition-colors"
-                                            >
-                                                <Icon size={13} />
-                                            </div>
-                                        ))}
+                                        {(project.links || []).map((item, j) => {
+                                            const Icon = item.icon;
+                                            return (
+                                                <a
+                                                    key={j}
+                                                    href={item.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="w-8 h-8 rounded-2xl glass border border-white/10 flex items-center justify-center text-foreground hover:text-[#ff811a] cursor-pointer transition-colors"
+                                                >
+                                                    <Icon size={13} />
+                                                </a>
+                                            );
+                                        })}
                                     </div>
                                 </div>
 

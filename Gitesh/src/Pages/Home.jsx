@@ -37,7 +37,7 @@ export default function Home() {
                     </div>
 
                     {/* Main Container */}
-                    <div className="max-w-7xl mx-auto h-fit relative z-10 flex flex-col px-4 lg:px-10 pb-16 ">
+                    <div className="max-w-7xl mx-auto h-fit relative z-10 flex flex-col px-4 lg:px-10 md:pb-16 ">
 
                         <div className="flex flex-col lg:flex-row justify-between gap-10 ">
 
@@ -147,7 +147,7 @@ export default function Home() {
                                 </div>
                             </motion.div>
                             {/* RIGHT SIDE (3D) */}
-                            <div className="md:absolute md:right-0 lg:right-0 2xl:-right-20 h-180 md:h-full md:w-95 lg:w-120 xl:w-180 2xl:w-200 top-20">
+                            <div className="md:absolute md:right-0 lg:right-0 2xl:-right-20 h-200 md:h-full md:w-95 lg:w-120 xl:w-180 2xl:w-200 top-20">
                                 <Lanyard
                                     position={[0, 0, 24]}
                                     gravity={[0, -40, 0]}

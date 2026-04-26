@@ -68,7 +68,14 @@ export default function NavBar() {
                                 <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-[#f68b43] via-[#bf72a2] to-[#a164d6] group-hover:w-full transition-all duration-300 ease-in-out '></span>
                             </Link>
                         </li>))}
-                    <button className='bg-[#ff811a] text-black  text-sm hover:shadow-[0_0_40px_hsla(27,100%,55%,0.4)] transition-all duration-300 hover:-translate-y-0.5 py-2 px-4 rounded-2xl'>
+                    <button className='bg-[#ff811a] text-black  text-sm hover:shadow-[0_0_40px_hsla(27,100%,55%,0.4)] transition-all duration-300 hover:-translate-y-0.5 py-2 px-4 rounded-2xl'
+                        onClick={() =>
+                            window.open(
+                                "https://wa.me/918219569378?text=Hi%20I%20am%20interested%20in%20your%20services",
+                                "_blank"
+                            )
+                        }
+                    >
                         Hire Me
                     </button>
                 </ul>
@@ -86,7 +93,7 @@ export default function NavBar() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="lg:hidden bg-black/90 backdrop-blur-md px-6 py-6 space-y-4"
+                        className="lg:hidden bg-black/70 backdrop-blur-md px-6 py-6 space-y-4 items-center text-center  rounded-xl absolute top-16 left-4 right-4 z-40"
                     >
                         {navMenu.map((item, i) => (
                             <Link
@@ -95,14 +102,22 @@ export default function NavBar() {
                                 smooth={true}
                                 duration={500}
                                 offset={-70}
-                                className="block text-gray-300 hover:text-orange-400"
+                                className="block text-gray-300 hover:text-orange-400 text-lg "
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {item.name}
                             </Link>
                         ))}
 
-                        <button className="w-full bg-orange-500 text-black py-2 rounded-xl">
+                        <button
+                            className="w-full bg-orange-500 text-black py-2 rounded-xl"
+                            onClick={() =>
+                                window.open(
+                                    "https://wa.me/918219569378?text=Hi%20I%20am%20interested%20in%20your%20services",
+                                    "_blank"
+                                )
+                            }
+                        >
                             Hire Me
                         </button>
                     </motion.div>
